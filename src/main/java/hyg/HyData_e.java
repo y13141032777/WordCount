@@ -1,23 +1,20 @@
 package hyg;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.Properties;
 
 
-public class HyData {
+public class HyData_e {
 
    List<Instance> instances = new ArrayList<Instance>();
 
-    SchemaB schema = null;
+    SchemaA schema = null;
 
-    public HyData(List<Instance> instances) {
+    public HyData_e(List<Instance> instances) {
         this.instances = instances;
     }
 
-    public HyData(List<Instance> instances ,SchemaB schema) {
+    public HyData_e(List<Instance> instances , SchemaA schema) {
         this.schema = schema;
         this.instances = instances;
     }
@@ -30,11 +27,7 @@ public class HyData {
         this.instances = instances;
     }
 
-    public SchemaB getSchema() {
-        return schema;
-    }
-
-    public void setSchema(SchemaB schema) {
+    public HyData_e(SchemaA schema) {
         this.schema = schema;
     }
 }

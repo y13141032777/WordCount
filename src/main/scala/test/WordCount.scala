@@ -12,7 +12,9 @@ object WordCount {
 
       val sc = new SparkContext(conf)
 
-      val rdd: RDD[String] = sc.textFile(path).flatMap(_.split(" "))
+      val rdd = sc.textFile(path).flatMap(_.split(" "))
+
+      rdd.foreach(println)
       rdd.map {
         (_, 1)
       }.reduceByKey(_ + _).foreach(println)

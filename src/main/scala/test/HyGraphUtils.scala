@@ -1,13 +1,13 @@
 package test
 
 import com.alibaba.fastjson.{JSON, JSONArray}
+import hyg.HyUtils
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 
 object HyGraphUtils {
 
   def main(args: Array[String]): Unit = {
-
 
     val conf = new SparkConf().setMaster("local[1]").setAppName("wc")
 
@@ -21,7 +21,7 @@ object HyGraphUtils {
 
     val nodes = JSON.parseObject(rules).getJSONArray("node")
 
-   var node = nodes.getJSONObject(0)
+    var node = nodes.getJSONObject(0)
       .getJSONObject("data")
        println(node)
 
